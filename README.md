@@ -96,7 +96,7 @@ This system integrates these components to collect, store, and visualize geospat
    - Open **pgAdmin** and connect to your PostgreSQL server.
    - Create a new database and add the **PostGIS extension**:
      ```sql
-     CREATE DATABASE spatial_data;
+     CREATE DATABASE OpenLayersProject;
      \c spatial_data
      CREATE EXTENSION postgis;
      ```
