@@ -97,7 +97,7 @@ This system integrates these components to collect, store, and visualize geospat
    - Create a new database and add the **PostGIS extension**:
      ```sql
      CREATE DATABASE OpenLayersProject;
-     \c spatial_data
+     \c OpenLayersProject
      CREATE EXTENSION postgis;
      ```
 
