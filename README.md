@@ -6,22 +6,22 @@ Welcome to the **OpenLayers Geospatial Project**! This repository provides all t
 
 ## 📚 Table of Contents
 
-- [🚀 Project Overview](#-project-overview)
-- [📂 Project Architecture](#-project-architecture)
-- [🛠 Prerequisites](#-prerequisites)
-- [📦 Installation and Setup](#-installation-and-setup)
+- [Project Overview](#-project-overview)
+- [Project Architecture](#-project-architecture)
+- [How It Works](#-how-it-works)
+- [Prerequisites](#-prerequisites)
+- [Installation and Setup](#-installation-and-setup)
   - [1. PostgreSQL and PostGIS Setup](#1-postgresql-and-postgis-setup)
   - [2. GeoServer Configuration](#2-geoserver-configuration)
   - [3. Backend Server Setup](#3-backend-server-setup)
   - [4. OpenLayers Client Setup](#4-openlayers-client-setup)
-- [📂 JS Files](#-js-files)
-  - [🗺 osm.js](#-osmjs)
-  - [🌍 geoserver.js](#-geoserverjs)
-  - [🌐 osm_gs.js](#-osm-gsjs)
-- [📋 How It Works](#-how-it-works)
-- [📸 Web Interface](#-web-interface)
-- [👥 Contribution](#-contribution)
-- [📄 Project By](#-project-by)
+- [JS Files](#-js-files)
+  - [osm.js](#-osmjs)
+  - [geoserver.js](#-geoserverjs)
+  - [osm_gs.js](#-osm-gsjs)
+- [Web Interface](#-web-interface)
+- [Contribution](#-contribution)
+- [Project By](#-project-by)
 
 ---
 
@@ -38,6 +38,35 @@ This project enables you to:
 ## 📂 **Project Architecture**
 
 ![Architecture](images/Architecture.png)
+
+---
+
+## How it Works 🌍
+
+This system allows users to interact with geospatial data through a web interface. Here's how it works:
+
+1. **Frontend (OpenLayers & Web App)** 🌐:  
+   Users interact with a map using OpenLayers to draw points, lines, or polygons. These actions generate geospatial data.
+
+2. **Backend (API & Database)** 💻:  
+   The frontend sends the data to the backend **node.js**, which processes and stores it in a **PostgreSQL** database with **PostGIS** for efficient geospatial management.
+
+3. **PostgreSQL/PostGIS** 🗄️:  
+   Geospatial data is stored and queried in PostgreSQL with the PostGIS extension, supporting various geospatial operations.
+
+4. **GeoServer** 🌐:  
+   GeoServer can serve the data via WMS/WFS, which can be used by OpenLayers to display the data.
+5. **OpenLayers**🗺️ :
+   
+   - **Fetching Data**:
+  OpenLayers can request geospatial data (e.g., layers, points, lines, polygons) from a GeoServer instance via standard web services like WMS (Web Map Service) or WFS (Web Feature Service). It does this by making HTTP requests to GeoServer, which then returns the data, typically in formats like GeoJSON, GML, or KML.
+
+  - **Displaying Data:**
+  OpenLayers takes this data and displays it on the map in the web application. It can render vector data (like points, lines, and polygons) or raster data (like satellite imagery or maps).
+
+This system integrates these components to collect, store, and visualize geospatial data in a web app. 🌍📊
+
+---
 
 ## 🛠 Prerequisites
 
@@ -147,14 +176,6 @@ This project enables you to:
 3. **Host the Client**:
    - Deploy your **OpenLayers** map on a **local** or **remote** web server for public or internal access.
 
-### How it works:
-
-- **Fetching Data**:
-  OpenLayers can request geospatial data (e.g., layers, points, lines, polygons) from a GeoServer instance via standard web services like WMS (Web Map Service) or WFS (Web Feature Service). It does this by making HTTP requests to GeoServer, which then returns the data, typically in formats like GeoJSON, GML, or KML.
-
-- **Displaying Data:**
-  OpenLayers takes this data and displays it on the map in the web application. It can render vector data (like points, lines, and polygons) or raster data (like satellite imagery or maps).
-
 ---
 
 ## 📂 **JS Files**
@@ -170,26 +191,6 @@ Configures **OpenLayers** to interact with **GeoServer**’s WMS service. Displa
 ### 🌐 **osm_gs.js**
 
 Combines **OpenStreetMap** with **GeoServer** layers, similar to **geoserver.js**, but also includes additional layers for custom shapes such as **Point**, **Line**, and **Polygon**. Allows users to draw shapes and save coordinates (points, circles, lines, polygons), which are stored in the `drawnFeatures` variable.
-
----
-
-## How it Works 🌍
-
-This system allows users to interact with geospatial data through a web interface. Here's how it works:
-
-1. **Frontend (OpenLayers & Web App)** 🌐:  
-   Users interact with a map using OpenLayers to draw points, lines, or polygons. These actions generate geospatial data.
-
-2. **Backend (API & Database)** 💻:  
-   The frontend sends the data to the backend **node.js**, which processes and stores it in a **PostgreSQL** database with **PostGIS** for efficient geospatial management.
-
-3. **PostgreSQL/PostGIS** 🗄️:  
-   Geospatial data is stored and queried in PostgreSQL with the PostGIS extension, supporting various geospatial operations.
-
-4. **GeoServer** 🌐:  
-   **GeoServer** can serve the data via WMS/WFS, which can be used by OpenLayers to display the data.
-
-This system integrates these components to collect, store, and visualize geospatial data in a web app. 🌍📊
 
 ---
 
