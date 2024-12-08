@@ -59,10 +59,11 @@ This system allows users to interact with geospatial data through a web interfac
 5. **OpenLayers**🗺️ :
    
    - **Fetching Data**:
-  OpenLayers can request geospatial data (e.g., layers, points, lines, polygons) from a GeoServer instance via standard web services like WMS (Web Map Service) or WFS (Web Feature Service). It does this by making HTTP requests to GeoServer, which then returns the data, typically in formats like GeoJSON, GML, or KML.
+     OpenLayers can request geospatial data (e.g., layers, points, lines, polygons) from a GeoServer instance via standard web services like WMS (Web Map Service) or WFS (Web Feature Service). It does this by 
+     making HTTP requests to GeoServer, which then returns the data, typically in formats like GeoJSON, GML, or KML.
 
-  - **Displaying Data:**
-  OpenLayers takes this data and displays it on the map in the web application. It can render vector data (like points, lines, and polygons) or raster data (like satellite imagery or maps).
+   - **Displaying Data:**
+    OpenLayers takes this data and displays it on the map in the web application. It can render vector data (like points, lines, and polygons) or raster data (like satellite imagery or maps).
 
 This system integrates these components to collect, store, and visualize geospatial data in a web app. 🌍📊
 
